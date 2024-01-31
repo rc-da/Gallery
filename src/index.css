@@ -123,12 +123,14 @@ body {
 }
 
 .welcomeContent {
-  height: 800px;
+  height: 600px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 40px;
+  color: aliceblue;
 }
 
 .foot {
@@ -162,4 +164,8 @@ a {
 a:hover {
   background-color: antiquewhite;
   color: rgb(113, 113, 113);
+}
+
+i {
+  color: burlywood;
 }

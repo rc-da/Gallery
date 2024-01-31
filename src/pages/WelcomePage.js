@@ -7,8 +7,15 @@ function WelcomePage() {
     <div className="welcome">
       <Header />
       <Items />
-      <div className="welcomeContent">Welcome to Gallery</div>
-      <Footer />
+      <div className="welcomeContent">
+        <p>
+          Welcome to <i>Gallery</i>
+        </p>
+        <p>
+          This is a website which depends on <i>Pixabay</i>
+        </p>
+        <p>for displaying images that are searched</p>
+      </div>
     </div>
   );
 }
