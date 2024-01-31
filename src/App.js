@@ -1,19 +1,17 @@
-import Items from "./Items";
-import Gallery from "./Gallery";
-import Header from "./Header";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Gallery from "./pages/Gallery";
+import WelcomePage from "./pages/WelcomePage";
 
 export default function App() {
-  const [name, setName] = useState();
-
-  function handleSelected(name) {
-    setName(() => name);
-  }
   return (
     <div className="app">
-      <Header handleSelected={handleSelected} name={name} setName={setName} />
-      <Items handleSelected={handleSelected} />
-      <Gallery name={name} />
+      <BrowserRouter>
+        <Routes>
+          <Route index path="/" element={<WelcomePage />} />
+          <Route path="/search" element={<Gallery />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

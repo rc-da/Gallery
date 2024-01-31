@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
-const key = "api goes here";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import Header from "../components/Header";
 
-export default function Gallery({ name = "car", category = "" }) {
+const key = "api from pixaby";
+
+export default function Gallery() {
+  const navigate = useNavigate();
   const [img, setImg] = useState([]);
   const [isLoding, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const [searchedParams] = useSearchParams();
+  const name = searchedParams.get("q");
+  const category = searchedParams.get("c");
 
   useEffect(
     function () {
@@ -58,14 +66,17 @@ export default function Gallery({ name = "car", category = "" }) {
     },
     [category, name, setImg, setIsLoading]
   );
-
+  if (name === "undefined") return navigate("/");
   return (
-    <div className="gallery">
-      {(isLoding || (img.length === 0 && error === "")) && <Loader />}
-      {error && <ErrorMessage message={error} />}
-      {(!isLoding || error) &&
-        img.map((i) => <Images key={i.id} url={i.webformatURL} />)}
-    </div>
+    <>
+      <Header />
+      <div className="gallery">
+        {(isLoding || (img.length === 0 && error === "")) && <Loader />}
+        {error && <ErrorMessage message={error} />}
+        {(!isLoding || error) &&
+          img.map((i) => <Images key={i.id} url={i.webformatURL} />)}
+      </div>
+    </>
   );
 }
 

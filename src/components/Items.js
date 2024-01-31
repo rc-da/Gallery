@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Items({ handleSelected }) {
   const items = [
@@ -22,8 +23,9 @@ export default function Items({ handleSelected }) {
 }
 
 function Itembtn({ name, handleSelected }) {
+  const navigate = useNavigate();
   return (
-    <Button id="items" onClick={() => handleSelected(name)}>
+    <Button id="items" onClick={() => navigate(`/search?q=${name}`)}>
       {`#${name}`}
     </Button>
   );
