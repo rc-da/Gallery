@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import {
   CDropdown,
   CDropdownItem,
@@ -20,19 +20,14 @@ export default function Header() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
 
-  useEffect(
-    function () {
-      if (name === "undefined" || name === "") return;
-
-      navigate(`/search?q=${name}`);
-    },
-    [name]
-  );
-
   return (
     <div className="head">
       <div className="title">
-        <div className="welcomeContent">Gallery</div>
+        <div className="wel">
+          <NavLink to="/">
+            <i>Gallery</i>
+          </NavLink>
+        </div>
       </div>
       <div className="searchbar">
         <input
@@ -41,6 +36,9 @@ export default function Header() {
           placeholder="Search for Images"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          onKeyUp={(e) => {
+            if (e.key === "Enter") navigate(`/search?q=${name}`);
+          }}
         />
       </div>
       <div
@@ -85,7 +83,9 @@ function CategoryItem({ itemName, name }) {
   return (
     <CDropdownItem
       id="item"
-      onClick={() => navigate(`/search?q=${name}&c=${itemName}`)}
+      onClick={() =>
+        name != null ? navigate(`/search?q=${name}&c=${itemName}`) : null
+      }
     >
       {itemName}
     </CDropdownItem>

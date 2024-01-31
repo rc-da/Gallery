@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 
-const key = "api from pixaby";
+const key = "41946682-5b38ddbcf73809982be084d1b";
 
 export default function Gallery() {
   const navigate = useNavigate();

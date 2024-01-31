@@ -161,11 +161,19 @@ a {
   padding: 30px 100px 30px 100px;
 }
 
-a:hover {
+.item:hover {
   background-color: antiquewhite;
   color: rgb(113, 113, 113);
 }
 
 i {
   color: burlywood;
+}
+
+.wel {
+  cursor: pointer;
+}
+.wel:hover {
+  background: none;
+  filter: drop-shadow(0 0 0 0.75rem black);
 }
