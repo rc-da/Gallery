@@ -1,6 +1,6 @@
-# Pixabay Image Search App
+# Gallert
 
-This React app allows users to search for images using the Pixabay API and displays the results dynamically.
+Gallery allows users to search for images using the Pixabay API and displays the results dynamically.
 
 ## Features
 
