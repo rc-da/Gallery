@@ -1,4 +1,4 @@
-src/configuration/*
+/src/configuration
 /node_modules
 /.pnp
 .pnp.js
