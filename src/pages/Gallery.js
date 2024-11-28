@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
+import data from "../configuration/config.json"
 
-const key = "41946682-5b38ddbcf73809982be084d1b";
+const key = data.key;
 
 export default function Gallery() {
   const navigate = useNavigate();

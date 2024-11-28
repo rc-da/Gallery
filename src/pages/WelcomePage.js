@@ -16,6 +16,7 @@ function WelcomePage() {
         </p>
         <p>for displaying images that are searched</p>
       </div>
+      <Footer />
     </div>
   );
 }

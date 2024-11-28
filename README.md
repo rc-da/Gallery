@@ -1,4 +1,4 @@
-# Gallert
+# Gallery
 
 Gallery allows users to search for images using the Pixabay API and displays the results dynamically.
 
