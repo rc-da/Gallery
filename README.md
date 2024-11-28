@@ -21,3 +21,8 @@ Gallery allows users to search for images using the Pixabay API and displays the
    ```bash
    git clone https://github.com/yourusername/pixabay-image-search.git
    ```
+---
+## Screenshots
+![image](https://github.com/user-attachments/assets/2772c914-4c6f-4c06-b3a7-a6a39fca41da)
+
+![image](https://github.com/user-attachments/assets/97f86dbb-5454-4c74-b658-61c6567a760d)
